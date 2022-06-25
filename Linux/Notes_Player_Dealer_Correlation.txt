@@ -1,0 +1,10 @@
+#3.B.6 In the notes file of the Player_Dealer_Correlation directory, add a summary of your findings noting the player and dealer you believe are colluding to scam Lucky Duck.
+Make sure to document your specific reasons for this finding.
+# After completing, player analysis and dealer schedule's analysis, I noted that the player behind the scam was Mylie Schmidt and the dealer was Billy Jones. 
+Reasons for this finding:
+	1) On the Losses occured on 0310,0312,0315 and other days 0311,0313,0314,0316,0317.
+	2) Mylie Schmidt was the player who played occasionally.
+	3) During Loss Time, he played 13 times and other days he played 26 times, overall, he played 39 times.
+	4) Dealer was Billy Jones, because on loss date: 0310, 0312, 0315, Billy Jones was the only dealer at the roulette table.
+
+Proof is the Dealers_working_during_losses and Roulette_Losses Evidence Files.

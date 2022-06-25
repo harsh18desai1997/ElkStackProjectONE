@@ -1,0 +1,34 @@
+#3.B.3 - Using your findings from the player analysis, create a separate script to look at each day and time that you determined losses occurred. Use awk, pipes, and grep to isolate out the following four fields:
+Time
+a.m./p.m.
+First name of roulette dealer
+Last name of roulette dealer
+For example, if a loss occurred on March 10 at 2 p.m., you would write one script to find the roulette dealer who was working at that specific day and time.
+
+# After navigating to Dealer_Analysis Folder and analyzing the dealer schedules, I created following scripts for finding and printing Time, am/pm, first name, last name of the dealer working during the loss times:
+grep '05:00:00 AM' 0310_Dealer_schedule | awk '{print $1, $2, $5, $6}' | grep -i am >> Dealers_working_during_losses
+grep '08:00:00 AM' 0310_Dealer_schedule | awk '{print $1, $2, $5, $6}' | grep -i am >> Dealers_working_during_losses
+grep '02:00:00 PM' 0310_Dealer_schedule | awk '{print $1, $2, $5, $6}' | grep -i am >> Dealers_working_during_losses
+grep '08:00:00 PM' 0310_Dealer_schedule | awk '{print $1, $2, $5, $6}' | grep -i am >> Dealers_working_during_losses
+grep '11:00:00 PM' 0310_Dealer_schedule | awk '{print $1, $2, $5, $6}' | grep -i am >> Dealers_working_during_losses
+grep '05:00:00 AM' 0312_Dealer_schedule | awk '{print $1, $2, $5, $6}' | grep -i am >> Dealers_working_during_losses
+grep '08:00:00 AM' 0312_Dealer_schedule | awk '{print $1, $2, $5, $6}' | grep -i am >> Dealers_working_during_losses
+grep '02:00:00 PM' 0312_Dealer_schedule | awk '{print $1, $2, $5, $6}' | grep -i am >> Dealers_working_during_losses
+grep '08:00:00 PM' 0312_Dealer_schedule | awk '{print $1, $2, $5, $6}' | grep -i am >> Dealers_working_during_losses
+grep '11:00:00 PM' 0312_Dealer_schedule | awk '{print $1, $2, $5, $6}' | grep -i am >> Dealers_working_during_losses
+grep '05:00:00 AM' 0315_Dealer_schedule | awk '{print $1, $2, $5, $6}' | grep -i am >> Dealers_working_during_losses
+grep '02:00:00 PM' 0315_Dealer_schedule | awk '{print $1, $2, $5, $6}' | grep -i am >> Dealers_working_during_losses
+grep '08:00:00 PM' 0315_Dealer_schedule | awk '{print $1, $2, $5, $6}' | grep -i am >> Dealers_working_during_losses
+These Above scripts didnt gave the right output.
+
+
+grep '05:00:00 AM' 031*_Dealer_schedule | awk '{print $1, $2, $5, $6}' >> Dealers_working_during_losses
+grep '08:00:00 AM' 031*_Dealer_schedule | awk '{print $1, $2, $5, $6}' >> Dealers_working_during_losses
+grep '02:00:00 AM' 031*_Dealer_schedule | awk '{print $1, $2, $5, $6}' >> Dealers_working_during_losses
+grep '08:00:00 AM' 031*_Dealer_schedule | awk '{print $1, $2, $5, $6}' >> Dealers_working_during_losses
+grep '11:00:00 AM' 031*_Dealer_schedule | awk '{print $1, $2, $5, $6}' >> Dealers_working_during_losses
+
+#3.B.5 Preview your file Dealers_working_during_losses and analyze the data. 
+#After running the above 5 scripts above, I examined that the primary and only dealer that was during the looses is Billy Jones and he worked 13 times.
+
+Extra - I also have created the find_dealer.sh shell script to verify the answer to number 3 in step of dealer analysis, and they have been responsed to 
