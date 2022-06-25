@@ -1,4 +1,4 @@
-# ELK STACK AUTOMATED Development
+# ELK STACK AUTOMATED DEVELOPMENT
 Repository for Week 13 Project of Harsh Desai
 
 [Network Diagram](Diagrams/NetworkDiagram.drawio.png)
