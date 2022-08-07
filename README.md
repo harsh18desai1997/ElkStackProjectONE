@@ -8,7 +8,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the [Ansible](Ansible) directory may be used to install only certain pieces of it, such as Filebeat.
 
-  - _[Filebeat Playbook](Ansible/Filebeat-Playbook.yml)_
+  - _[Filebeat Playbook](Ansible/filebeat-playbook.yml)_
 
 This document contains the following details:
 - Description of the Topology
@@ -35,11 +35,10 @@ The configuration details of each machine may be found below.
 
 | Name                 | Function     | IP Address    | Operating System |
 |----------------------|--------------|---------------|------------------|
-| JumpBoxProvisioner   | Gateway      | 20.231.96.111 | Linux            |
-| Web #1               | Web Server   | 20.25.102.34  | Linux            |
-| Web #2               | Web Server   | 20.25.102.34  | Linux            |
-| Web #3               | Web Server   | 20.25.102.34  | Linux            |
-| ELK-SERVER           | Log Server   | 20.9.58.72    | Linux            |
+| Jump-Box-Provisioner | Gateway      | 20.9.8.71     | Linux            |
+| Web #1               | Web Server   | 20.9.54.192   | Linux            |
+| Web #2               | Web Server   | 20.9.54.192   | Linux            |
+| ELK-SERVER           | Log Server   | 20.127.31.165 | Linux            |
 
 ### Access Policies
 
@@ -79,7 +78,6 @@ The following screenshot displays the result of running `docker ps` after succes
 This ELK server is configured to monitor the following machines:
 - _Web #1: 10.0.0.5_
 - _Web #2: 10.0.0.6_
-- _Web #3: 10.0.0.7_
 
 We have installed the following Beats on these machines:
 - _Filebeats and Metricbeats_
