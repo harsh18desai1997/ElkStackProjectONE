@@ -38,6 +38,7 @@ The configuration details of each machine may be found below.
 | Jump-Box-Provisioner | Gateway      | 20.9.8.71     | Linux            |
 | Web #1               | Web Server   | 20.9.54.192   | Linux            |
 | Web #2               | Web Server   | 20.9.54.192   | Linux            |
+| Web #3               | Web Server   | 20.9.54.192   | Linux            |
 | ELK-SERVER           | Log Server   | 20.127.31.165 | Linux            |
 
 ### Access Policies
