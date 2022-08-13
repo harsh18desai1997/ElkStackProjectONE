@@ -106,4 +106,4 @@ SSH into the control node and follow the steps below:
   - _While in the `/etc/ansible` directory you should see a file called `hosts`. In this file you can create web server groups in which to specify what computers you want to install files on._
 - _Which URL do you navigate to in order to check that the ELK server is running?_
   - _To check if the ELK server is running you can navigate to `http://[your.VM.IP]:5601/app/kibana`. It should look similar to the following image:_
-![](Images/Kibana.PNG)
+![](Images/Kibana_Setup.jpg)
