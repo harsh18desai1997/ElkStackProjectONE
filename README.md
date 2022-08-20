@@ -95,7 +95,7 @@ The playbook implements the following tasks:
 - Start and Attach Docker that was created by docker run it command
 - ssh into that container and go to the hosts file located in /etc/ansible directory of docker.
 - Update that file with these commands:
--   _!(Ansible/hosts)_
+-   !(Ansible/hosts)_
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
