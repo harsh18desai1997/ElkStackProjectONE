@@ -2,11 +2,11 @@
 ## Automated ELK Stack Deployment
 Repository for Week 13 Project of Harsh Desai
 
-The files in this repository were used to configure the network depicted below.
+The Files that are attached in this repository are depicted in the network diagram below.
 
 [Network Diagram](Diagrams/ELK_STACK_DIAGRAM.jpg)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the [Ansible](Ansible) directory may be used to install only certain pieces of it, such as Filebeat.
+Files such as filebeat-playbook.yml, metricbeat-playbook.yml have been installed on elk server with the help of docker container in jump box privisioner vm and working in web-1 vm.
 
   - _[Filebeat Playbook](Ansible/filebeat-playbook.yml)_
 
@@ -18,13 +18,20 @@ This document contains the following details:
   - Machines Being Monitored
 - How to Use the Ansible Build
 
-
 ### Description of the Topology
 
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
+The purpose of this project is to explain the function of virtual machines, resource groups, network security groups, and different virtual networks. In this project, I used:
+|       Function Name            |   Name USED   |
+|--------------------------------|---------------|
+| Resource Group                 | RedTEAMRG     |
+| Network Security Group         | ELK-SERVER-nsg|
+|                                | RedTEAMNSG    |
+| Virtual Networks               | ELKVNET       |
+|                                | RedTEAMVNET   |
+| Load Balancer                  | RedTeamLB     |
 
-Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
-- _As said above, load balancers protect the A in the CIA triad: Availability. Ensuring as little down time as possible to our services._ 
+Load balancing is a device that acts as a reverse proxy and distributes network or application traffic across a number of servers. Load balancers are used to increase capacity (concurrent users) and reliability of applications.
+
 - _We also use the jumpbox to ensure the integrity of our web servers by restricting where access can come from._
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the servers and system files.
