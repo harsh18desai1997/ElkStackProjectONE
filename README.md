@@ -58,7 +58,6 @@ Access to the Jump Box VM, Web VMs and ELK Server VM are available through Inbou
 | RedTEAMNSG     |   350    | SSHFromJumpBox    |  22    |   TCP    | 10.0.0.4       | VirtualNetwork |
 |                |   4000   | SSH               |  22    |   TCP    | 73.101.106.120 | VirtualNetwork |
 |                |   4010   | Port_80           |  80    |   ANY    | 73.101.106.120 | VirtualNetwork |
-|----------------|----------|-------------------|--------|----------|----------------|----------------|
 | ELK-SERVER-nsg |   700    | Kibana9200        |  9200  |   ANY    | 73.101.106.120 | VirtualNetwork |
 |                |   800    | Kibana5601        |  5601  |   ANY    | 73.101.106.120 | ANY            |
 |                |   1000   | default-allow-ssh |  22    |   TCP    | ANY            | ANY            |
