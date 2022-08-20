@@ -95,14 +95,7 @@ The playbook implements the following tasks:
 - Start and Attach Docker that was created by docker run it command
 - ssh into that container and go to the hosts file located in /etc/ansible directory of docker.
 - Update that file with these commands:
--   [webservers]
-      10.0.0.5 ansible_python_interpreter=/usr/bin/python3
-      10.0.0.6 ansible_python_interpreter=/usr/bin/python3
-      10.0.0.7 ansible_python_interpreter=/usr/bin/python3
-    # List the IP address of your ELK server
-    # There should only be one IP address
-    [elk]
-    10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+-   ![Hosts](Ansible/hosts)
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 ![ELK SERVER Docker PS](Images/ELK_Docker_PS.jpg)
