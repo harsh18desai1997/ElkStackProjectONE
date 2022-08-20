@@ -112,7 +112,7 @@ SSH into the control node and follow the steps below:
   - there are four files
   - _[Filebeat Playbook](Ansible/filebeat-playbook.yml)_
   - _[Metricbeat Playbook](Ansible/metricbeat-playbook.yml)_
-  - _[DVWA Install Playbook](Ansible/dvwa-install.yml)_
+  - _[DVWA Install Playbook](Ansible/dvwa_install.yml)_
   - _[ELK Install Playbook](Ansible/install-elk.yml)_
   - These files are installed and located in /etc/ansible/hosts directory in web vm file explorer.
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
