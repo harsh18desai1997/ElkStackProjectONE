@@ -21,6 +21,7 @@ This document contains the following details:
 ### Description of the Topology
 
 The purpose of this project is to explain the function of virtual machines, resource groups, network security groups, and different virtual networks. In this project, I used:
+|--------------------------------|---------------|
 |       Function Name            |   Name USED   |
 |--------------------------------|---------------|
 | Resource Group                 | RedTEAMRG     |
@@ -29,6 +30,7 @@ The purpose of this project is to explain the function of virtual machines, reso
 | Virtual Networks               | ELKVNET       |
 |                                | RedTEAMVNET   |
 | Load Balancer                  | RedTeamLB     |
+|--------------------------------|---------------|
 
 Load balancing is a device that acts as a reverse proxy and distributes network or application traffic across a number of servers. Load balancers are used to increase capacity (concurrent users) and reliability of applications.
 
@@ -40,6 +42,7 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 The configuration details of each machine may be found below.
 
+|----------------------|--------------|---------------|------------------|
 | Name                 | Function     | IP Address    | Operating System |
 |----------------------|--------------|---------------|------------------|
 | Jump-Box-Provisioner | Gateway      | 20.9.8.71     | Linux            |
@@ -47,48 +50,50 @@ The configuration details of each machine may be found below.
 | Web #2               | Web Server   | 20.9.54.192   | Linux            |
 | Web #3               | Web Server   | 20.9.54.192   | Linux            |
 | ELK-SERVER           | Log Server   | 20.127.31.165 | Linux            |
+|----------------------|--------------|---------------|------------------|
 
 ### Access Policies
 
-The machines on the internal network are not exposed to the public Internet. 
-
-Only the web machines can accept connections from the Internet (port 80). Access to this machine is only allowed from the following IP addresses:
-- _73.101.106.120_
-
+Access to the Jump Box VM, Web VMs and ELK Server VM are available through Inbound Security Rules on NSG named: RedTEAMNSG and ELK-SERVER-nsg: 
+|----------------|----------|-------------------|------  |----------|----------------|----------------|
+| NSG Name       | Priority | Name              |  Port  | Protocol |     Source     |   Destination  |
+|----------------|----------|-------------------|--------|----------|----------------|----------------|
+| RedTEAMNSG     |   350    | SSHFromJumpBox    |  22    |   TCP    | 10.0.0.4       | VirtualNetwork |
+|                |   4000   | SSH               |  22    |   TCP    | 73.101.106.120 | VirtualNetwork |
+|                |   4010   | Port_80           |  80    |   ANY    | 73.101.106.120 | VirtualNetwork |
+|----------------|----------|-------------------|--------|----------|----------------|----------------|
+| ELK-SERVER-nsg |   700    | Kibana9200        |  9200  |   ANY    | 73.101.106.120 | VirtualNetwork |
+|                |   800    | Kibana5601        |  5601  |   ANY    | 73.101.106.120 | ANY            |
+|                |   1000   | default-allow-ssh |  22    |   TCP    | ANY            | ANY            |
+|----------------|----------|-------------------|------  |----------|----------------|----------------|
+ 
 Machines within the network can only be accessed by the Jump Box. More specifically the Docker container within the Jumpbox with the proper ssh keys.
 - _The ELK server can also be accessed through my personal computer using the IP 73.101.106.120 on port 5601 to view the Kibana dashboard._
 
 A summary of the access policies in place can be found in the table below.
-
-| Name       | Publicly Accessible | Allowed IP Addresses  |
-|------------|---------------------|-----------------------|
-| Jump Box   | No                  | 73.101.106.120           |
-| Web #1     | Yes                 | 73.101.106.120, 10.0.0.4 |
-| Web #2     | Yes                 | 73.101.106.120, 10.0.0.4 |
-| Web #3     | Yes                 | 73.101.106.120, 10.0.0.4 |
-| Elk Server | No                  | 73.101.106.120, 10.0.0.4 |
+|------------------------|---------------------|--------------------------|
+| Name                   | Publicly Accessible |   Allowed IP Addresses   |
+|------------------------|---------------------|--------------------------|
+| Jump-Box-Provisioner   | No                  | 73.101.106.120           |
+| Web #1                 | Yes                 | 73.101.106.120, 10.0.0.4 |
+| Web #2                 | Yes                 | 73.101.106.120, 10.0.0.4 |
+| Web #3                 | Yes                 | 73.101.106.120, 10.0.0.4 |
+| ELK-SERVER             | No                  | 73.101.106.120, 10.0.0.4 |
+|------------------------|---------------------|--------------------------|
 
 ### Elk Configuration
-
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _This allows us to quickly implament this on other ELK servers consistently._
-
-The playbook implements the following tasks:
-- _The playbook begins by installing the relevant software, being Docker, Python and the module to help Docker work with python._
-- _Next, the playbook increases the memory usage of the server so that the container has the resources to run._
-- _Finally, it downloads the correct docker image and enables the service on boot to make sure it is always running._
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 `
 ![](Images/DockerPS.png)
 
 ### Target Machines & Beats
-This ELK server is configured to monitor the following machines:
+The ELK server and DWVA container are configured to monitor the following machines:
 - _Web #1: 10.0.0.5_
 - _Web #2: 10.0.0.6_
 - _Web #3: 10.0.0.7_
 
-We have installed the following Beats on these machines:
+We have installed the following Beats on Elk:
 - _Filebeats and Metricbeats_
 
 These Beats allow us to collect the following information from each machine:
