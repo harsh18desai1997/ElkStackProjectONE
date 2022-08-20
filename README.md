@@ -103,9 +103,9 @@ SSH into the control node and follow the steps below:
 - Copy both the filebeat and metricbeat playbooks and config files to the `/etc/ansible` directory.
 - Update the config files to include the IPs and ports of the machines you are looking to monitor.
 - Run the playbook, and navigate to `http://[your.VM.IP]:5601/app/kibana#/home/tutorial/systemLogs` to check that the installation worked as expected. Check this by scrolling to the bottom and hit the "Check Data" button. You should receive a message similar to this
-![](Images/FileBeat.PNG)
+![](Images/FileBeat_Activated.png)
 - For Meatricbeat, navigate to `http://[your.VM.IP]:5601/app/kibana#/home/tutorial/dockerMetrics`, and again scroll to the bottom and hit check data. You should receive a message similar to this.
-![](Images/MetricBeat.PNG)
+![](Images/Metric_Beat_Activated.png)
 
 ### FAQ
 - _Which file is the playbook? Where do you copy it?_
