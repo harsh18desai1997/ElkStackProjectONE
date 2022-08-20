@@ -6,12 +6,13 @@ The files in this repository were used to configure the network depicted below.
 
 ![Network Diagram](/Diagrams/ELK_STACK_DIAGRAM.jpg)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat and Metricbeat.
 
-  - _TODO: Enter the playbook file._
+  - _![Filebeat Playbook](Ansible\filebeat-playbook.yml)_
+  - _![Metricbeat Playbook](Ansible\metricbeat-playbook.yml)_
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
