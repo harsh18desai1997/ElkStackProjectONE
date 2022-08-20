@@ -81,7 +81,7 @@ A summary of the access policies in place can be found in the table below.
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 `
-![](Images/DockerPS.png)
+![](Images/ELK_Docker_PS.jpg)
 
 ### Target Machines & Beats
 The ELK server and DWVA container are configured to monitor the following machines:
@@ -109,9 +109,15 @@ SSH into the control node and follow the steps below:
 
 ### FAQ
 - _Which file is the playbook? Where do you copy it?_
-  - _The playbook files are found in the [Ansible](Ansible) directory with playbook in their file name (Also seen at the top of this page). These can be copied though either copy/paste into a file you create on the system, or downloaded and moved to the `/etc/ansible` directory._
+  - there are four files
+  - _[Filebeat Playbook](Ansible/filebeat-playbook.yml)_
+  - _[Metricbeat Playbook](Ansible/metricbeat-playbook.yml)_
+  - _[DVWA Install Playbook](Ansible/dvwa-install.yml)_
+  - _[ELK Install Playbook](Ansible/install-elk.yml)_
+  - These files are installed and located in /etc/ansible/hosts directory in web vm file explorer.
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
   - _While in the `/etc/ansible` directory you should see a file called `hosts`. In this file you can create web server groups in which to specify what computers you want to install files on._
+  - _[HOSTS FILE](Ansible/hosts)_
 - _Which URL do you navigate to in order to check that the ELK server is running?_
   - _To check if the ELK server is running you can navigate to `http://[your.VM.IP]:5601/app/kibana`. It should look similar to the following image:_
 ![](Images/Kibana_Setup.jpg)
