@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![Network Diagram](Diagrams/ELK_STACK_DIAGRAM.jpg)_
+[Network Diagram](Diagrams/ELK_STACK_DIAGRAM.jpg)_
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat and Metricbeat.
 
@@ -95,7 +95,7 @@ The playbook implements the following tasks:
 - Start and Attach Docker that was created by docker run it command
 - ssh into that container and go to the hosts file located in /etc/ansible directory of docker.
 - Update that file with these commands:
--   !(Ansible/hosts)_
+-   ![Hosts](Ansible/hosts)_
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
