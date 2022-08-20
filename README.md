@@ -1,4 +1,4 @@
-# ProjectONE
+# ELKSTACKProject
 ## Automated ELK Stack Deployment
 Repository for Week 13 Project of Harsh Desai
 
