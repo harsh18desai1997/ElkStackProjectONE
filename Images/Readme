@@ -1,1 +1,5 @@
-This section consists of screenshots of important steps
+This section consists of 
+playbook files
+hosts file
+ansible.cfg 
+files to install dvwa container, kibana, and beats on kibana
