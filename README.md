@@ -7,7 +7,7 @@ The files in this repository were used to configure the network depicted below.
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat and Metricbeat.
 
   - [Install ELK](Ansible/install-elk.yml)
-  - [Install DVWA](Ansible/dvwa-install.yml)  
+  - [Install DVWA](Ansible/dvwa_install.yml)  
   - [Filebeat Playbook](Ansible/filebeat-playbook.yml)
   - [Metricbeat Playbook](Ansible/metricbeat-playbook.yml)
 
@@ -132,7 +132,7 @@ Answers:
 _Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
 -   [install-elk.yml](Ansible/install-elk.yml)
-  - [dvwa-install.yml](Ansible/dvwa-install.yml)
+  - [dvwa-install.yml](Ansible/dvwa_install.yml)
   - [filebeat-playbook.yml](Ansible/filebeat-playbook.yml)
   - [metricbeat-playbook.yml](Ansible/metricbeat-playbook.yml)'
   - These all files are located in /etc/ansible/roles directory in the docker container remote vm.
